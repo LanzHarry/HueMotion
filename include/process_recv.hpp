@@ -1,3 +1,3 @@
 #pragma once
 
-void process_signal(double hex_recv);
+void process_signal(uint32_t hex_recv);

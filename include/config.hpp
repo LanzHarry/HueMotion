@@ -1,6 +1,7 @@
 #pragma once
 
-#define DEBUG 0
+// debug settings, set to 0 to disable any serial output
+#define DEBUG 1
 
 #if DEBUG
 #define debug(x) Serial.print(x)
@@ -10,5 +11,6 @@
 #define debugln(x)
 #endif
 
+// pin configurations
 #define IR_RECV_PIN 4
 #define POWER_LED_PIN 21
