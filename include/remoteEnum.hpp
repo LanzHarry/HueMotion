@@ -1,8 +1,8 @@
 #pragma once
 
-struct Button_pressed
+struct ButtonPressed
 {
-    enum button_hex : uint32_t
+    enum buttonHex : uint32_t
     {
         POWER = 0xBF40FF00,
         PLAY = 0xBE41FF00,
