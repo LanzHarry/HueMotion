@@ -99,19 +99,20 @@ void makeHTTPRequest()
   yield();
   
 
+  // define message type and address and HTTP spec: https://www.rfc-editor.org/rfc/rfc7230.html
   client.print(F("PUT "));
   client.print("/clip/v2/resource/light/c8dc9e82-f247-4527-9757-3e325ae70c21");
   client.println(F(" HTTP/1.1"));
 
-    // Headers
-  client.print(F("hue-application-key: "));
+    // Headers, terminate with CRLF
+  client.print(F("hue-application-key:"));
   client.println(F(APP_KEY));
-  client.print(F("Host: "));
+  client.print(F("Host:"));
   client.println(F(BRIDGE_ID));
-  // client.println(F("Accept: application/json"));
-  client.println(F("Content-Type: text/plain"));
-  client.println(F("Content-Length: 18\r\n"));
+  client.println(F("Content-Type:text/plain"));
+  client.print("Content-Length:18\r\n\r\n"); // need \r and \n as end of line marker as HTTP/1.1 expects CRLF here, and another one for rigour (could use println although this is more accurate to the spec)
   
+  // message body
   client.println("{\"on\":{\"on\":true}}");
 
   if (client.println() == 0)
