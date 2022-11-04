@@ -1,11 +1,9 @@
-#include <Arduino.h>
-#include "config.hpp"
-#include "remoteEnum.hpp"
+#include "processRecv.hpp"
 
 void processSignal(uint32_t hex_recv)
 {
   // power button pressed
-  if (hex_recv == ButtonPressed::POWER)
+  if (hex_recv == POWER)
   {
     debugln("Power button pressed");
     

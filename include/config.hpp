@@ -14,6 +14,7 @@
 // pin configurations
 #define IR_RECV_PIN 4
 #define POWER_LED_PIN 21
+#define BUTTON_PIN 5
 
 // API config
-#define HUE_HOST "https://192.168.0.34/clip/v2/resource/device"
+#define HUE_HOST "192.168.0.34"
